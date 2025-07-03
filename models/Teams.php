@@ -7,7 +7,7 @@ class Teams
     public function __construct(
         private string $name,
         private string $description,
-        private string $logo
+        private Media $logo
     ) {}
 
     // ID
@@ -31,11 +31,11 @@ class Teams
     }
 
     // Logo
-    public function getLogo(): string
+    public function getLogo(): Media
     {
         return $this->logo;
     }
-    public function setLogo(string $logo): void
+    public function setLogo(Media $logo): void
     {
         $this->logo = $logo;
     }
