@@ -49,8 +49,4 @@ $teams = [
 echo $twig->render("teams.html.twig", [
     'teams' => $teams,
 ]);
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> adea5a371fcb517a90d2e2bedb27909eef7717a2
