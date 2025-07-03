@@ -1,6 +1,6 @@
 <?php
 
-class Post {
+class Media {
     private ?int $id = null;
     private string $url;
     private string $alt;
