@@ -22,8 +22,7 @@ class PlayersManager extends AbstractManager
             $teamManager = new TeamManager();
             $tm = $mediaManager->findOne($row['logo']);
 
-            $team = new Players($row['nickname'], $row['bio'], $mm, $tm)
-            );
+            $team = new Players($row['nickname'], $row['bio'], $mm, $tm);
             $team->setId($row['id']);
             $players[] = $team;
         }
