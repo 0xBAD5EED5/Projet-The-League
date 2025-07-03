@@ -1,5 +1,5 @@
 <?php
-
+// Classe abstraite pour la gestion de la connexion à la base de données
 abstract class AbstractManager {
     protected PDO $db;
 

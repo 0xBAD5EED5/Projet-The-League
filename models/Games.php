@@ -1,4 +1,5 @@
 <?php
+// Classe représentant un match entre deux équipes
 class Games
 {
     private ?int $id = null;
@@ -21,7 +22,7 @@ class Games
         $this->team_2 = $team_2;
     }
 
-    
+    // Getter et setter pour l'identifiant du match
     public function getId(): ?int
     {
         return $this->id;
@@ -31,8 +32,7 @@ class Games
         $this->id = $id;
     }
 
-
-
+    // Getter et setter pour le nom du match
     public function getName(): string
     {
         return $this->name;
@@ -43,8 +43,7 @@ class Games
         $this->name = $name;
     }
 
-   
-   
+    // Getter et setter pour la date du match
     public function getDate(): DateTime
     {
         return $this->date;
@@ -55,8 +54,7 @@ class Games
         $this->date = $date;
     }
 
-    
-    
+    // Getter et setter pour la première équipe
     public function getTeam1(): Teams
     {
         return $this->team_1;
@@ -67,9 +65,7 @@ class Games
         $this->team_1 = $team_1;
     }
 
-
-
-    
+    // Getter et setter pour la deuxième équipe
     public function getTeam2(): Teams
     {
         return $this->team_2;
@@ -79,9 +75,8 @@ class Games
     {
         $this->team_2 = $team_2;
     }
-    
-    
 
+    // Getter et setter pour l'équipe gagnante
     public function getWinner(): Teams
     {
         return $this->winner;

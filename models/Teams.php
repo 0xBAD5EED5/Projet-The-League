@@ -1,5 +1,5 @@
 <?php
-
+// Classe représentant une équipe
 class Teams
 {
     private ?int $id = null;
@@ -10,7 +10,7 @@ class Teams
         private Media $logo
     ) {}
 
-    // ID
+    // Getter et setter pour l'identifiant de l'équipe
     public function getId(): ?int
     {
         return $this->id;
@@ -20,7 +20,7 @@ class Teams
         $this->id = $id;
     }
 
-    // Name
+    // Getter et setter pour le nom de l'équipe
     public function getName(): string
     {
         return $this->name;
@@ -30,7 +30,7 @@ class Teams
         $this->name = $name;
     }
 
-    // Logo
+    // Getter et setter pour le logo de l'équipe
     public function getLogo(): Media
     {
         return $this->logo;

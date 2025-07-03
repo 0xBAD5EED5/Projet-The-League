@@ -1,5 +1,5 @@
 <?php
-
+// Manager pour la gestion des équipes
 class TeamsManager extends AbstractManager {
 
     public function __construct()
@@ -7,6 +7,7 @@ class TeamsManager extends AbstractManager {
         parent::__construct();
     }
 
+    // Récupère toutes les équipes
     public function findAll(): array {
         $stmt = $this->db->query("SELECT * FROM teams");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -27,6 +28,7 @@ class TeamsManager extends AbstractManager {
         return $teams;
     }
 
+    // Récupère une équipe par son ID
     public function findOne(int $id): ?Teams {
         $stmt = $this->db->prepare("SELECT * FROM teams WHERE id = :id");
         $stmt->execute([':id' => $id]);

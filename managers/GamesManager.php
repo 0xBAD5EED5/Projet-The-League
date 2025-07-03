@@ -1,4 +1,5 @@
 <?php
+// Manager pour la gestion des matchs
 class GamesManager  extends AbstractManager {
 
     private PDO $db;
@@ -6,7 +7,7 @@ class GamesManager  extends AbstractManager {
     public function __construct(PDO $db) {
         $this->db = $db;
     }
-//Récupère toutes les parties
+    //Récupère toutes les parties
     public function findAll(): array {
     $query = $this->db->prepare('SELECT * FROM games');
     $query->execute();
@@ -49,7 +50,6 @@ class GamesManager  extends AbstractManager {
     return $query->fetchAll(PDO::FETCH_ASSOC);
     
     }
-    
 }
-        
-       
+
+
