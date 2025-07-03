@@ -1,6 +1,6 @@
 <?php
 
-class User
+class Teams
 {
     private ?int $id = null;
 
