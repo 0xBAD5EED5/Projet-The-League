@@ -1,6 +1,5 @@
 <?php
-
-
+// Manager pour la gestion des médias
 class MediaManager extends AbstractManager
 {
     public function __construct()
@@ -8,6 +7,7 @@ class MediaManager extends AbstractManager
         parent::__construct();
     }
     
+    // Récupère tous les médias
     public function findAll(): array {
         $stmt = $this->db->query("SELECT * FROM medias");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,8 @@ class MediaManager extends AbstractManager
         return $medias;
     }
 
-   public function findOne(int $id) : ? Media
+    // Récupère un média par son ID
+    public function findOne(int $id) : ? Media
     {
         $query = $this->db->prepare('SELECT * FROM medias WHERE id=:id');
 

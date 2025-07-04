@@ -1,6 +1,5 @@
 <?php
-
-
+// Manager pour la gestion des joueurs
 class PlayersManager extends AbstractManager
 {
 
@@ -10,6 +9,7 @@ class PlayersManager extends AbstractManager
         }
         
         
+        // Récupère tous les joueurs
         public function findAll(): array {
         $stmt = $this->db->query("SELECT * FROM players");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -22,8 +22,7 @@ class PlayersManager extends AbstractManager
             $teamManager = new TeamManager();
             $tm = $mediaManager->findOne($row['logo']);
 
-            $team = new Players($row['nickname'], $row['bio'], $mm, $tm)
-            );
+            $team = new Players($row['nickname'], $row['bio'], $mm, $tm);
             $team->setId($row['id']);
             $players[] = $team;
         }
@@ -31,6 +30,7 @@ class PlayersManager extends AbstractManager
         
     }
     
+    // Récupère un joueur par son ID
      public function findOne(int $id) : ? Players
     {
         $query = $this->db->prepare('SELECT * FROM players WHERE id=:id');
@@ -62,10 +62,10 @@ class PlayersManager extends AbstractManager
     
     
 }
-        
-        
-        
-        
-        
+
+
+
+
+
 
 

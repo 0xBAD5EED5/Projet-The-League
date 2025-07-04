@@ -1,5 +1,5 @@
 <?php
-
+// Classe représentant un joueur
 class Players
 {
     
@@ -11,7 +11,6 @@ class Players
     
     public function __construct (string $nickname, string $bio, Media $portrait, Teams $team)
     {
-        
         $this -> nickname = $nickname;
         $this -> bio = $bio;
         $this -> portrait = $portrait;
@@ -21,17 +20,19 @@ class Players
     
     
     
+    // Getter et setter pour l'identifiant du joueur
     public function getId(): ?int
     {
         return $this->id;
     }
     
-      public function setId(int $id): void
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
     
 
+    // Getter et setter pour le pseudo du joueur
     public function getNickname(): string
     {
         return $this->nickname;
@@ -43,6 +44,7 @@ class Players
     }
 
 
+    // Getter et setter pour la biographie du joueur
     public function getBio(): string
     {
         return $this->bio;
@@ -53,6 +55,7 @@ class Players
         $this->bio = $bio;
     }
 
+    // Getter et setter pour le portrait du joueur
     public function getPortrait(): Media
     {
         return $this->portrait;
@@ -63,6 +66,7 @@ class Players
         $this->portrait = $portrait;
     } 
     
+    // Getter et setter pour l'équipe du joueur
     public function getTeam(): Teams
     {
         return $this->team;
