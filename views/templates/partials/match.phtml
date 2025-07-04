@@ -1,0 +1,52 @@
+
+<h2>
+<!--Le titre du match : le nom des deux équipes affiché en majuscules(avecs strtoupper), séparé par "VS".
+La date du match : formatée en jour/mois/année.
+Les logos des deux équipes : affichés sous forme d’images.
+Un tableau des performances des joueurs : listant pour chaque joueur son surnom, son équipe, le nombre de points marqués et le nombre de passes décisives.
+
+-->
+
+
+  <?php 
+    echo strtoupper($game['team1_name']) . " VS " . strtoupper($game['team2_name']); 
+  ?>
+</h2>
+
+<p>
+  <?php 
+    $dateObj = new DateTime($game['date']);
+    echo $dateObj->format('d/m/Y'); 
+  ?>
+</p>
+
+<div class="logos">
+    <img src="<?php echo $game['team1_logo']; ?>" alt="<?php echo $game['team1_name']; ?>">
+    <img src="<?php echo $game['team2_logo']; ?>" alt="<?php echo $game['team2_name']; ?>">
+</div>
+
+<h3>Les performances</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>PLAYER</th>
+            <th>TEAM</th>
+            <th>POINTS</th>
+            <th>ASSISTS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+        foreach ($players as $player) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($player['nickname']) . "</td>";
+            echo "<td>" . htmlspecialchars($player['team_name']) . "</td>";
+            echo "<td>" . $player['points'] . "</td>";
+            echo "<td>" . $player['assists'] . "</td>";
+            echo "</tr>";
+        }
+        ?>
+    </tbody>
+</table>
+

@@ -1,0 +1,8 @@
+@mixin roboto($weight: 400, $style: normal, $size: 16px) {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: $style;
+  font-variation-settings: "wdth" 100;
+  font-size: $size;
+}

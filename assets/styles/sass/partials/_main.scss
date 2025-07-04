@@ -1,0 +1,41 @@
+main{
+    margin-top: 4rem;
+    > p{
+        color:$yellow;
+        display:flex;
+        justify-content: center;
+        @include roboto(800, normal, 30px);
+    }
+    img{
+        width:150px;
+        height:150px;
+    }
+    .Grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 2rem;
+      padding: 2rem;
+        
+    }
+    .team-card {
+      text-align: center;
+      background-color: #1c2541;
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+    h2{
+       color:$yellow; 
+    }
+    .para-img{
+        color:$white;
+    }
+    button{
+        background-color:$darkerGrey;
+        color:$yellow;
+        border-color:$yellow;
+        border:0.5px solid;
+        border-radius:7px
+    }
+}

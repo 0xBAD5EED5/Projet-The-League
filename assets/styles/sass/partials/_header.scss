@@ -1,0 +1,16 @@
+header{
+    h1{
+        color:$white;
+        display:flex;
+        justify-content: center;
+    }
+    ul{
+        padding-top: 1.5rem;
+        list-style:none;
+        display:flex;
+        justify-content:space-between;
+        li{
+            color:$white;
+        }
+    }
+}

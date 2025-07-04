@@ -1,0 +1,78 @@
+header h1 {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+header ul {
+  padding-top: 1.5rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+header ul li {
+  color: #ffffff;
+}
+
+main {
+  margin-top: 4rem;
+}
+main > p {
+  color: #d4b52f;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 30px;
+}
+main img {
+  width: 150px;
+  height: 150px;
+}
+main .Grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+main .team-card {
+  text-align: center;
+  background-color: #1c2541;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+main h2 {
+  color: #d4b52f;
+}
+main .para-img {
+  color: #ffffff;
+}
+main button {
+  background-color: #0b132b;
+  color: #d4b52f;
+  border-color: #d4b52f;
+  border: 0.5px solid;
+  border-radius: 7px;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #0b132b;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+/*# sourceMappingURL=style.css.map */

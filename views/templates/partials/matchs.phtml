@@ -1,0 +1,34 @@
+<?php
+if (empty($games)) {
+    echo '<p>Aucune partie trouvée.</p>';
+} else {
+    echo '<ul>';
+    foreach ($games as $game) {
+        $name = htmlspecialchars($game->getName());
+        $date = $game->getDate()->format('d/m/Y H:i');
+
+        $team1Name = htmlspecialchars($game->getTeam1()->getName());
+        $team2Name = htmlspecialchars($game->getTeam2()->getName());
+        $team1Logo = htmlspecialchars($game->getTeam1()->getLogo());
+        $team2Logo = htmlspecialchars($game->getTeam2()->getLogo());
+
+        $winner = htmlspecialchars($game->getWinner()->getName());
+
+        echo '<li>';
+        echo "<strong>$name</strong><br>";
+        echo "$date<br>";
+
+        echo '<div style=\"display: flex; align-items: center; gap: 10px; margin: 5px 0;\">';
+        echo "<img src=\"$team1Logo\" alt=\"$team1Name\" width=\"40\"> ";
+        echo strtoupper($team1Name);
+        echo " <strong>VS</strong> ";
+        echo strtoupper($team2Name);
+        echo " <img src=\"$team2Logo\" alt=\"$team2Name\" width=\"40\">";
+        echo '</div>';
+
+        echo "<p>Gagnant : <strong>$winner</strong></p>";
+        echo '</li><hr>';
+    }
+    echo '</ul>';
+}
+?>

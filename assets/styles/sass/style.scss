@@ -1,0 +1,19 @@
+@import "_vars";
+@import "_fonts";
+@import "partials/_header";
+@import "partials/_main";
+
+html {
+  font-size:16px;
+}
+
+body {
+  margin:0;
+  min-height: 100vh;
+  background-color: #0b132b;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;      
+  padding: 4rem; 
+}
