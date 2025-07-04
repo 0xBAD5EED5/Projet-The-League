@@ -2,10 +2,8 @@
 // Manager pour la gestion des matchs
 class GamesManager  extends AbstractManager {
 
-    private PDO $db;
-
-    public function __construct(PDO $db) {
-        $this->db = $db;
+    public function __construct() {
+        parent::__construct();
     }
     //Récupère toutes les parties
     public function findAll(): array {
@@ -16,13 +14,15 @@ class GamesManager  extends AbstractManager {
     $games = []; // Correction ici
 
     foreach ($rows as $row) {
-        $games[] = new Games( // On ajoute à la liste avec []
-            $row['name'],
-            DateTime::createFromFormat('Y-m-d H:i:s', $row['date']),
-            $row['team_1'],
-            $row['team_2'],
-            $row['winner']
+        $teamM1 = new TeamsManager();
+        $tm1 = $teamM1-> findOne($row['team_1']);
+        $teamM2 = new TeamsManager();
+        $tm2 = $teamM2-> findOne($row['team_2']);
+        $game = new Games( // On ajoute à la liste avec []
+            $row['name'], DateTime::createFromFormat('Y-m-d H:i:s', $row['date'], $tm1, $tm2)
         );
+        $game -> setId($row['id']);
+        $games[]=$game;
     }
 
     return $games;
@@ -56,13 +56,9 @@ class GamesManager  extends AbstractManager {
     ");
     $query->execute([$gameId]);
     return $query->fetchAll(PDO::FETCH_ASSOC);
-<<<<<<< HEAD
+
 }
     
-=======
-    
-    }
->>>>>>> 74a7ed0dd751271b62bc64bba1eaf1fe7a23544b
 }
 
 

@@ -1,19 +1,16 @@
 <?php
-<<<<<<< HEAD
-
-require_once 'models/managers/GamesManager.php';
-
-class GameController {
+class GamesController extends AbstractController {
 
     private GamesManager $gamesManager;
 
-    public function __construct(PDO $pdo) {
-        $this->gamesManager = new GamesManager($pdo);
+    public function __construct() {
+        $this->gamesManager = new GamesManager();
     }
 // Liste de toutes les parties
     public function listAllGames(): void {
         $games = $this->gamesManager->findAll();
-        require 'views/games/listAllGames';
+        $partials = "matchs.phtml";
+        require 'views/templates/layout.phtml';
         
     }
 
@@ -30,21 +27,7 @@ class GameController {
 
         $players = $this->gamesManager->getPlayersForGame($id);
 
-        require 'views/games/showGameDetails';
+        require 'views/templates/showGameDetails';
     }
 }
-=======
-/**
- * Contrôleur pour la gestion des matchs (Games).
- * Gère les actions liées à l'affichage, la création, la modification et la suppression des matchs.
- * Étend AbstractController pour bénéficier des méthodes utilitaires de rendu et de redirection.
- */
-class GamesController extends AbstractController
-{
-    // Exemple de méthode d'affichage de la liste des matchs
-    // public function index() {
-    //     // Récupérer les matchs via GamesManager
-    //     // Appeler $this->render() avec le template et les données
-    // }
-}
->>>>>>> 74a7ed0dd751271b62bc64bba1eaf1fe7a23544b
+

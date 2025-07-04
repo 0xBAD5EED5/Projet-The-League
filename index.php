@@ -1,10 +1,11 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+//require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/config/autoload.php';
 
-$loader = new \Twig\Loader\FilesystemLoader('templates');
-$twig = new \Twig\Environment($loader, [
-    'debug' => true,
-]);
+// $loader = new \Twig\Loader\FilesystemLoader('templates');
+// $twig = new \Twig\Environment($loader, [
+//     'debug' => true,
+// ]);
 
 // Tableau associatif avec les infos des teams
 $teams = [
@@ -44,9 +45,12 @@ $teams = [
         'link' => '#',
     ],
 ];
+$gc = new GamesController();
+$gc->listAllGames();
 
+//require "views/templates/partials/home.phtml"; 
 // Passe le tableau à Twig ici :
-echo $twig->render("teams.html.twig", [
-    'teams' => $teams,
-]);
-?>
+//echo $twig->render("teams.html.twig", [
+   // 'teams' => $teams,
+//]);
+
